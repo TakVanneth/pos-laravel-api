@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\EmployeeDetailController;
+use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\SalesController;
+use App\Http\Controllers\Api\SupplierController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +28,6 @@ Route::middleware('auth:sanctum', 'admin')->group(function () {
 });
 Route::apiResource('employee-details', EmployeeDetailController::class);
 Route::apiResource('categories', CategoryController::class);
+Route::apiResource('supplier', SupplierController::class);
+Route::apiResource('product', ProductController::class);
+Route::apiResource('sales', SalesController::class);

@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\EmployeeDetail;
+use App\Models\Product;
 use App\Models\Role;
+use App\Models\Sales;
+use App\Models\Supplier;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
@@ -56,6 +59,29 @@ class DatabaseSeeder extends Seeder
             'city' => 'Phnom Penh',
             'state' => 'Phnom Penh',
             'hire_date' => Carbon::now()->subYears(rand(1, 5))->format('Y-m-d'),
+        ]);
+
+        Supplier::create([
+            "supplier_name" => "Vanneth",
+            "contact_name" => "Vanneth",
+            "contact_email" => "vannethtak03@gmail.com",
+            "contact_phone" => "010296011",
+            "address" => "Phnome Penh"
+        ]);
+
+        Product::create([
+            "product_name" => "Coffee",
+            "image_url" => "https://takvanneth.github.io/RELAISPORTS/images/The%20World's%20Most%20Hated.jpeg",
+            "category_id" => 1,
+            "supplier_id" => 1,
+            "unit_price" => 2.5,
+            "stock_quantity" => 10
+        ]);
+
+        Sales::create([
+            'sale_date' => now(),
+            'total_amount' => 1000,
+            'user_id' => 1,
         ]);
     }
 }
